@@ -29,4 +29,9 @@ public class CadastroService {
 
         return cadastro;
     }
+
+    public void cadastrarNoBanco(CadastroDTO cadastroDTO){
+        cadastroRepository.save(cadastrarModel(cadastroDTO));
+    }
+
 }

@@ -1,10 +1,7 @@
 package br.com.zup.Cadastros.cadastro;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -14,7 +11,13 @@ public class CadastroController {
     @Autowired
     private CadastroService cadastroService;
 
-
+//    @PostMapping
+//
+//    @GetMapping
+//
+//    @DeleteMapping
+//
+//    @GetMapping(path = "/{id}")
     /*
     todo  1 - crie um metodo para cadastrar uma pessoa.
       Para um cadastro todo os campos são obrigatórios EXCETO o campo dataDoCadastro que deve ser preenchido pelo proprio sistema e o client não deve saber da existencia desse campo
