@@ -1,41 +1,20 @@
 package br.com.zup.Cadastros.cadastro;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "cadastros")
-public class Cadastro {
-    @Id
+public class CadastroDTO {
     private String cpf;
-
-    @Column(nullable = false)
     private String nome;
-
-    @Column(nullable = false)
     private String sobrenome;
-
-    @Column(nullable = false)
     private String cidade;
-    @Column(nullable = false)
     private String bairro;
-    @Column(nullable = false)
     private String nomeDoParenteProximo;
-    @Column(nullable = false)
     private boolean moraSozinho;
-    @Column(nullable = false)
     private boolean temPet;
-    @Column(nullable = false)
     private int idade;
-    //vai ser adicionado automaticamente pelo sistema
     private LocalDate dataDoCadastro;
 
-    public Cadastro() {
+    public CadastroDTO() {
     }
 
     public String getCpf() {
@@ -110,6 +89,9 @@ public class Cadastro {
         this.idade = idade;
     }
 
+    public LocalDate getDataDoCadastro() {
+        return dataDoCadastro;
+    }
 
     public void setDataDoCadastro(LocalDate dataDoCadastro) {
         this.dataDoCadastro = dataDoCadastro;
