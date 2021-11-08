@@ -15,23 +15,24 @@ public class CadastroService {
         //calculando a data automaticamente
         LocalDate dataAtual = LocalDate.now();
 
-        cadastro.setBairro(cadastroDTO.getBairro());
-        cadastro.setCidade(cadastroDTO.getCidade());
         cadastro.setCpf(cadastroDTO.getCpf());
-        cadastro.setIdade(cadastroDTO.getIdade());
         cadastro.setNome(cadastroDTO.getNome());
+        cadastro.setSobrenome(cadastroDTO.getSobrenome());
+        cadastro.setCidade(cadastroDTO.getCidade());
+        cadastro.setBairro(cadastroDTO.getBairro());
+        cadastro.setNomeDoParenteProximo(cadastroDTO.getNomeDoParenteProximo());
         cadastro.setMoraSozinho(cadastroDTO.isMoraSozinho());
         cadastro.setTemPet(cadastroDTO.isTemPet());
-        cadastro.setNomeDoParenteProximo(cadastroDTO.getNomeDoParenteProximo());
-        cadastro.setSobrenome(cadastroDTO.getSobrenome());
+        cadastro.setIdade(cadastroDTO.getIdade());
+
         //adicionando a data calculada automaticamente
         cadastro.setDataDoCadastro(dataAtual);
 
         return cadastro;
     }
 
-    public void cadastrarNoBanco(CadastroDTO cadastroDTO){
-        cadastroRepository.save(cadastrarModel(cadastroDTO));
+    public Cadastro cadastrarNoBanco(CadastroDTO cadastroDTO) {
+        return cadastroRepository.save(cadastrarModel(cadastroDTO));
     }
 
 }

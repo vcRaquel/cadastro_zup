@@ -1,17 +1,28 @@
 package br.com.zup.Cadastros.cadastro;
 
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public class CadastroDTO {
+    @NotNull
     private String cpf;
+    @NotNull
     private String nome;
+    @NotNull
     private String sobrenome;
+    @NotNull
     private String cidade;
+    @NotNull
     private String bairro;
+    @NotNull
     private String nomeDoParenteProximo;
+    @NotNull
     private boolean moraSozinho;
+    @NotNull
     private boolean temPet;
+    @NotNull
     private int idade;
+
     private LocalDate dataDoCadastro;
 
     public CadastroDTO() {

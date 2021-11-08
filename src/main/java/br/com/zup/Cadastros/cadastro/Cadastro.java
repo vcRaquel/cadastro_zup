@@ -114,4 +114,5 @@ public class Cadastro {
     public void setDataDoCadastro(LocalDate dataDoCadastro) {
         this.dataDoCadastro = dataDoCadastro;
     }
+
 }

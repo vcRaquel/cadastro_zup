@@ -11,7 +11,10 @@ public class CadastroController {
     @Autowired
     private CadastroService cadastroService;
 
-//    @PostMapping
+    @PostMapping
+    public Cadastro realizarCadastro(@RequestBody @Valid CadastroDTO cadastroDTO){
+        return cadastroService.cadastrarNoBanco(cadastroDTO);
+    }
 //
 //    @GetMapping
 //
