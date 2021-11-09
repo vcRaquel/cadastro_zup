@@ -53,5 +53,10 @@ public class CadastroService {
         cadastroRepository.deleteById(cpf);
     }
 
+    public Cadastro buscaCadastroPorCpf(String cpf) {
+        Optional<Cadastro> cadastro = cadastroRepository.findById(cpf);
+        return cadastro.get();
+    }
+
 
 }
