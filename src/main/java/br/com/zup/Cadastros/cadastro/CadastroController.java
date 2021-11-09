@@ -18,7 +18,19 @@ public class CadastroController {
         return cadastroService.cadastrarNoBanco(cadastroDTO);
     }
 
-    //@GetMapping
+    @GetMapping
+    public List<CadastroDTOResumido> exibirCadastros(
+            @RequestParam(required = false) Boolean moraSozinho,
+            @RequestParam(required = false) Boolean temPet,
+            @RequestParam(required = false) Integer idade) {
+        List<CadastroDTOResumido> cadastroResumoDTOS = new ArrayList<>();
+        for (Cadastro cadastro : cadastroService.exibirTodosCadastros(moraSozinho, temPet, idade)) {
+            cadastroResumoDTOS.add(
+                    new CadastroDTOResumido(cadastro.getCpf(), cadastro.getNome(), cadastro.getSobrenome()));
+        }
+        return cadastroResumoDTOS;
+    }
+
 
     //@DeleteMapping
 
