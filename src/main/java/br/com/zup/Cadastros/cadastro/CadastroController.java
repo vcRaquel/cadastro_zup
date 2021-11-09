@@ -32,7 +32,10 @@ public class CadastroController {
     }
 
 
-    //@DeleteMapping
+    @DeleteMapping(path ={"/{cpf}"})
+        public void delete(@PathVariable String cpf) {
+            cadastroService.deletarCadastro(cpf);
+        }
 
     //@GetMapping(path ={"/{id}"})
 
