@@ -37,6 +37,17 @@ public class CadastroService {
         return cadastroRepository.save(cadastrarModel(cadastroDTO));
     }
 
+    public List<Cadastro> exibirTodosCadastros(Boolean moraSozinho, Boolean temPet, Integer idade) {
+        if (moraSozinho != null) {
+            return cadastroRepository.findAllByMoraSozinho(moraSozinho);
+        } else if (temPet != null) {
+            return cadastroRepository.findAllByTemPet(temPet);
+        } else if (idade != null) {
+            return cadastroRepository.findAllByIdade(idade);
+        }
+        Iterable<Cadastro> simulacaos = cadastroRepository.findAll();
+        return (List<Cadastro>) simulacaos;
+    }
 
 
 }
