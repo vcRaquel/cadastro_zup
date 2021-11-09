@@ -37,7 +37,11 @@ public class CadastroController {
             cadastroService.deletarCadastro(cpf);
         }
 
-    //@GetMapping(path ={"/{id}"})
+    @GetMapping(path ={"/{cpf}"})
+    public Cadastro buscaCadastroPeloId(@PathVariable String cpf) {
+        return cadastroService.buscaCadastroPorCpf(cpf);
+    }
+
 
     /*
     todo  1 - OK - crie um metodo para cadastrar uma pessoa.
