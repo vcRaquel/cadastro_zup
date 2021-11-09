@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/cadastros")
@@ -15,12 +17,13 @@ public class CadastroController {
     public Cadastro realizarCadastro(@RequestBody @Valid CadastroDTO cadastroDTO){
         return cadastroService.cadastrarNoBanco(cadastroDTO);
     }
-//
-//    @GetMapping
-//
-//    @DeleteMapping
-//
-//    @GetMapping(path = "/{id}")
+
+    //@GetMapping
+
+    //@DeleteMapping
+
+    //@GetMapping(path ={"/{id}"})
+
     /*
     todo  1 - crie um metodo para cadastrar uma pessoa.
       Para um cadastro todo os campos são obrigatórios EXCETO o campo dataDoCadastro que deve ser preenchido pelo proprio sistema e o client não deve saber da existencia desse campo
