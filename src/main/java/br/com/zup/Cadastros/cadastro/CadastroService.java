@@ -49,5 +49,9 @@ public class CadastroService {
         return (List<Cadastro>) simulacaos;
     }
 
+    public void deletarCadastro(String cpf) {
+        cadastroRepository.deleteById(cpf);
+    }
+
 
 }
