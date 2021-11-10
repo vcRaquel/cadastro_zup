@@ -15,7 +15,7 @@ public class CadastroService {
     public Cadastro salvarCadastro(Cadastro cadastro){
         //colocando a data atual no cadastro
         cadastro.setDataDoCadastro(LocalDate.now());
-        //salvando a entidade no repository?
+        //salvando a entidade no repository/banco de dados?
         return cadastroRepository.save(cadastro);
     }
 

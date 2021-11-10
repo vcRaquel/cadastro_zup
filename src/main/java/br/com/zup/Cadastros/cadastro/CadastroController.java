@@ -15,10 +15,33 @@ public class CadastroController {
     private CadastroService cadastroService;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)//adicionado pelo Vini
-    public Cadastro realizarCadastro(@RequestBody @Valid CadastroDTO cadastroDTO){
-        return cadastroService.cadastrarNoBanco(cadastroDTO);
+    @ResponseStatus(HttpStatus.CREATED)
+    public void realizarCadastro(@RequestBody CadastroDTO cadastroDTO){
+
+        //instancia uma entidade/model de Cadastro
+        Cadastro cadastro = new Cadastro();
+
+        //pega os dados da CadastroDTO recebida e coloca na Cadastro instanciada
+        cadastro.setBairro(cadastroDTO.getBairro());
+        cadastro.setCidade(cadastroDTO.getCidade());
+        cadastro.setCpf(cadastroDTO.getCpf());
+        cadastro.setIdade(cadastroDTO.getIdade());
+        cadastro.setNome(cadastroDTO.getNome());
+        cadastro.setTemPet(cadastroDTO.isTemPet());
+        cadastro.setMoraSozinho(cadastroDTO.isMoraSozinho());
+        cadastro.setSobrenome(cadastroDTO.getSobrenome());
+        cadastro.setNomeDoParenteProximo(cadastroDTO.getNomeDoParenteProximo());
+
+        //chama o método da service que tanto adiciona a hora atualizada quanto salva no banco de dados
+        cadastroService.salvarCadastro(cadastro);
     }
+
+
+//    @PostMapping
+//    @ResponseStatus(HttpStatus.CREATED)//adicionado pelo Vini
+//    public Cadastro realizarCadastro(@RequestBody @Valid CadastroDTO cadastroDTO){
+//        return cadastroService.cadastrarNoBanco(cadastroDTO);
+//    }
 
     @GetMapping
     public List<CadastroDTOResumido> exibirCadastros(
