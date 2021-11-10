@@ -12,7 +12,7 @@ public class CadastroService {
     @Autowired
     private CadastroRepository cadastroRepository;
 
-    public Cadastro cadastrarModel(CadastroDTO cadastroDTO) {
+    public Cadastro cadastrarModel(CadastroDTO cadastroDTO) {//Cadastro cadastro
         Cadastro cadastro = new Cadastro();
         //calculando a data automaticamente
         LocalDate dataAtual = LocalDate.now();

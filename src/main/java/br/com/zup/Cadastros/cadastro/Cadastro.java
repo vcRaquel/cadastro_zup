@@ -115,4 +115,7 @@ public class Cadastro {
         this.dataDoCadastro = dataDoCadastro;
     }
 
+    public LocalDate getDataDoCadastro() {
+        return dataDoCadastro;
+    }
 }

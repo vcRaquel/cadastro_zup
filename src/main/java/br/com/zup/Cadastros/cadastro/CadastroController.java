@@ -1,6 +1,7 @@
 package br.com.zup.Cadastros.cadastro;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -14,6 +15,7 @@ public class CadastroController {
     private CadastroService cadastroService;
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)//adicionado pelo Vini
     public Cadastro realizarCadastro(@RequestBody @Valid CadastroDTO cadastroDTO){
         return cadastroService.cadastrarNoBanco(cadastroDTO);
     }
@@ -33,6 +35,7 @@ public class CadastroController {
 
 
     @DeleteMapping(path ={"/{cpf}"})
+    @ResponseStatus(HttpStatus.NO_CONTENT)// colocado pelo Vini, não existe corpo
         public void delete(@PathVariable String cpf) {
             cadastroService.deletarCadastro(cpf);
         }
