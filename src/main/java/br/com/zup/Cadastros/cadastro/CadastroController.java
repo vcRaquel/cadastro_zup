@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,14 +34,14 @@ public class CadastroController {
 //    }
 
     @GetMapping
-    public List<CadastroDTOResumido> exibirCadastros(
+    public List<ResumoCadastroDTO> exibirCadastros(
             @RequestParam(required = false) Boolean moraSozinho,
             @RequestParam(required = false) Boolean temPet,
             @RequestParam(required = false) Integer idade) {
-        List<CadastroDTOResumido> cadastroResumoDTOS = new ArrayList<>();
+        List<ResumoCadastroDTO> cadastroResumoDTOS = new ArrayList<>();
         for (Cadastro cadastro : cadastroService.exibirTodosCadastros(moraSozinho, temPet, idade)) {
             cadastroResumoDTOS.add(
-                    new CadastroDTOResumido(cadastro.getCpf(), cadastro.getNome(), cadastro.getSobrenome()));
+                    new ResumoCadastroDTO(cadastro.getCpf(), cadastro.getNome(), cadastro.getSobrenome()));
         }
         return cadastroResumoDTOS;
     }

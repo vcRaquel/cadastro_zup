@@ -1,15 +1,15 @@
 package br.com.zup.Cadastros.cadastro;
 
-public class CadastroDTOResumido {
+public class ResumoCadastroDTO {
 
     private String cpf;
     private String nome;
     private String sobrenome;
 
-    public CadastroDTOResumido() {
+    public ResumoCadastroDTO() {
     }
 
-    public CadastroDTOResumido(String cpf, String nome, String sobrenome) {
+    public ResumoCadastroDTO(String cpf, String nome, String sobrenome) {
         this.cpf = cpf;
         this.nome = nome;
         this.sobrenome = sobrenome;
